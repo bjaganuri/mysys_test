@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<title>Test</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.mainContainer {
+			height: 100%;
+			width: 100%;
+			margin: 0px;
+			padding: 25px;
+		}
+		.todoListContainer {
+			width: 50%;
+			height: auto;
+			float: left;
+		}
+		#todoCatDropDown {
+			height: 25px;
+			width: 200px;
+		}
+		input[type=text] {
+			height: 25px;
+			border: 1px solid gray;
+			width: 200px;
+			padding: 2px 5px;
+			border-radius: 3px;
+			margin: 0px 15px;
+		}
+		.row {
+			width: 100%;
+			height: auto;
+			padding: 10px 0px;
+		}
+		button {
+			height: 25px;
+			padding: 5px;
+			margin: 0px 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="mainContainer">
+		<h2> Todo App </h2>
+		<div class="todoListContainer">
+			<header>
+				<select id="todoCatDropDown" onchange="sortList(event)">
+					
+				</select>
+				<input type="text" id="odoListFilter" placehoder="Filter" onchange="filterToDoList(event)"/>
+			</header>
+			<section id="todoList">
+				<div id="pendingToDoList" class="row">
+
+				</div>
+				<hr />
+				<div id="addNewTodDoItem" class="row">
+					<form name="addNewToDo" onsubmit="addNewItem(event)">
+						<input type="text" name="category" required/>
+						<input type="text" name="disc" required/>
+						<input type="submit" value="Add" style="display:none;" />
+					</form>
+				</div>
+				<hr />
+				<div id="completedToDoList">
+					
+				</div>
+			</section>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
